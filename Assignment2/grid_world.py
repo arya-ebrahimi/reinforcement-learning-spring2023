@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.table import Table
 
-C = 100
+
+C = 100 #constat to add to reward
 WORLD_SIZE = 6
 GOAL = [2, 5]
 DISCOUNT = 0.9
