@@ -4,3 +4,4 @@
 
 ### Table of Contents
 - [Assignment1](https://github.com/Arya-Ebrahimi/Reinforcement-Learning-Spring2023/tree/main/Assignment1 "Assignment1"): Chapter2 of Sutton and Barto, Multi-armed Bandits.
+- [Assignment2](https://github.com/Arya-Ebrahimi/Reinforcement-Learning-Spring2023/tree/main/Assignment1 "Assignment1"): Chapter3 of Sutton and Barto, MDP and Bellman equations.
