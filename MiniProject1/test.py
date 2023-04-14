@@ -5,8 +5,27 @@ from gymnasium.wrappers import record_video
 from core.policy_iteration import policy_iteration
 from core.value_iteration import value_iteration
 
-def play(mode, gamma=0.9):
-    env = gym.make("FrozenLake-v1", is_slippery=False, render_mode='rgb_array')
+class Wrapper(gym.Wrapper):
+    def __init__(self, env, step_reward=0.0, hole_reward=0.0):
+        super().__init__(env)
+    
+        self.step_reward = step_reward
+        self.hole_reward = hole_reward
+        
+        self.holes = [5, 7, 11, 12]
+        
+    def step(self, action):
+        observation, reward, terminated, truncated, info = self.env.step(action)
+        reward = self.step_reward
+        if observation in self.holes:
+            reward = self.hole_reward
+        if observation == 15:
+            reward = 1.0
+        return observation, reward,  terminated, truncated, info
+    
+def play(mode, gamma=0.9, is_slippery=False, step_reward=0.0, hole_reward=0.0):
+    env = gym.make("FrozenLake-v1", is_slippery=is_slippery, render_mode='rgb_array')
+    env = Wrapper(env=env, step_reward=step_reward, hole_reward=hole_reward)
     env = record_video.RecordVideo(env, video_folder='runs', name_prefix=mode)
     if mode == 'policy_iteration':
         V, pi = policy_iteration(env.P, env.observation_space.n, env.action_space.n, gamma=gamma, tol=1e-4)
@@ -29,5 +48,5 @@ def play(mode, gamma=0.9):
     
 if __name__ == '__main__':
     
-    play(mode='policy_iteration', gamma=0)
-    play(mode='value_iteration', gamma=0)
+    play(mode='policy_iteration', gamma=0.9, is_slippery=True, step_reward=-0.05, hole_reward=-2.0)
+    play(mode='value_iteration', gamma=0.9, is_slippery=True, step_reward=-0.05, hole_reward=-2.0)
