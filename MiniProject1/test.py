@@ -65,21 +65,42 @@ if __name__ == '__main__':
     total_steps.append(play(mode='policy_iteration', gamma=0.9, is_slippery=False, step_reward=-0.05))
     total_steps.append(play(mode='value_iteration', gamma=0.9, is_slippery=False, step_reward=-0.05))
     
+    total_steps.append(play(mode='policy_iteration', gamma=1, is_slippery=False, step_reward=-0.05))
+    total_steps.append(play(mode='value_iteration', gamma=1, is_slippery=False, step_reward=-0.05))
+    
     total_steps.append(play(mode='policy_iteration', gamma=0.9, is_slippery=True, step_reward=-0.05))
     total_steps.append(play(mode='value_iteration', gamma=0.9, is_slippery=True, step_reward=-0.05))
+
+    total_steps.append(play(mode='policy_iteration', gamma=1, is_slippery=True, step_reward=-0.05))
+    total_steps.append(play(mode='value_iteration', gamma=1, is_slippery=True, step_reward=-0.05))
     
     total_steps.append(play(mode='policy_iteration', gamma=0.9, is_slippery=False, hole_reward=-2.0))
     total_steps.append(play(mode='value_iteration', gamma=0.9, is_slippery=False, hole_reward=-2.0))
     
+    total_steps.append(play(mode='policy_iteration', gamma=1, is_slippery=False, hole_reward=-2.0))
+    total_steps.append(play(mode='value_iteration', gamma=1, is_slippery=False, hole_reward=-2.0))
         
     total_steps.append(play(mode='policy_iteration', gamma=0.9, is_slippery=True, hole_reward=-2.0))
     total_steps.append(play(mode='value_iteration', gamma=0.9, is_slippery=True, hole_reward=-2.0))
     
+    total_steps.append(play(mode='policy_iteration', gamma=1, is_slippery=True, hole_reward=-2.0))
+    total_steps.append(play(mode='value_iteration', gamma=1, is_slippery=True, hole_reward=-2.0))
+
+    
     total_steps.append(play(mode='policy_iteration', gamma=0.9, is_slippery=False, step_reward=-0.05, hole_reward=-2.0))
     total_steps.append(play(mode='value_iteration', gamma=0.9, is_slippery=False, step_reward=-0.05, hole_reward=-2.0))
     
+        
+    total_steps.append(play(mode='policy_iteration', gamma=1, is_slippery=False, step_reward=-0.05, hole_reward=-2.0))
+    total_steps.append(play(mode='value_iteration', gamma=1, is_slippery=False, step_reward=-0.05, hole_reward=-2.0))
+    
+
+    
     total_steps.append(play(mode='policy_iteration', gamma=0.9, is_slippery=True, step_reward=-0.05, hole_reward=-2.0))
     total_steps.append(play(mode='value_iteration', gamma=0.9, is_slippery=True, step_reward=-0.05, hole_reward=-2.0))
+    
+    total_steps.append(play(mode='policy_iteration', gamma=1, is_slippery=True, step_reward=-0.05, hole_reward=-2.0))
+    total_steps.append(play(mode='value_iteration', gamma=1, is_slippery=True, step_reward=-0.05, hole_reward=-2.0))
     
     
     for i in total_steps:

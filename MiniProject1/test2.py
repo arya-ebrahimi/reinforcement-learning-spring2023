@@ -55,5 +55,5 @@ def play(mode, gamma=0.9, is_slippery=False, step_reward=0.0, hole_reward=0.0):
     
 if __name__ == '__main__':
     total_steps = []
-    play(mode='policy_iteration', gamma=0)
-    play(mode='value_iteration', gamma=0)
+    play(mode='policy_iteration', gamma=1, step_reward=-0.05, hole_reward=-2)
+    play(mode='value_iteration', gamma=1)
