@@ -8,7 +8,7 @@ from core.algorithms import *
 
 
 class Wrapper(gym.Wrapper):
-    def __init__(self, env, step_reward=0.0, hole_reward=0.0):
+    def __init__(self, env):
         super().__init__(env)
     
         self.action_space = Discrete(10)

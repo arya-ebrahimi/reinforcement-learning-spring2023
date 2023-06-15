@@ -55,7 +55,7 @@ def sarsa(env:gym.Env, num_episodes=10000, alpha=0.1, gamma=0.9, epsilon=0.1):
             if random.random() < epsilon:
                 next_action = env.action_space.sample()
             else:
-                next_action = np.argmax(q_table[state])
+                next_action = np.argmax(q_table[next_state])
             
             Q_s = q_table[state, action]
             Q_s_prime = q_table[next_state, next_action]
